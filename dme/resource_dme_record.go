@@ -16,7 +16,7 @@ func resourceDMERecord() *schema.Resource {
 		Update: resourceDMERecordUpdate,
 		Delete: resourceDMERecordDelete,
 		Importer: &schema.ResourceImporter{
-			State: schema.ImportStatePassthrough,
+			State: resourceDMERecordImport,
 		},
 
 		Schema: map[string]*schema.Schema{
@@ -163,6 +163,21 @@ func resourceDMERecordDelete(d *schema.ResourceData, meta interface{}) error {
 	}
 
 	return nil
+}
+
+func resourceDMERecordImport(d *schema.ResourceData, meta interface{}) ([]*ResourceData, error) {
+	input_id := d.Id()
+
+	parts := strings.SplitN(input_id, "/", 2)
+
+	if len(parts) == 2 {
+		d.Set("domainid", parts[0])
+		d.SetId(parts[1])
+	} else {
+		return nil, fmt.Errorf("Error parsing id, unable to import: %s. Must be in format DOMAIN_ID/RECORD_ID.", input_id)
+	}
+
+	return []*ResourceData{d}, nil
 }
 
 func getAll(d *schema.ResourceData, cr map[string]interface{}) error {
