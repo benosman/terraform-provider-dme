@@ -15,6 +15,9 @@ func resourceDMERecord() *schema.Resource {
 		Read:   resourceDMERecordRead,
 		Update: resourceDMERecordUpdate,
 		Delete: resourceDMERecordDelete,
+		Importer: &schema.ResourceImporter{
+			State: schema.ImportStatePassthrough,
+		},
 
 		Schema: map[string]*schema.Schema{
 			// Use recordid for TF ID.
