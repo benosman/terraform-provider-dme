@@ -165,7 +165,7 @@ func resourceDMERecordDelete(d *schema.ResourceData, meta interface{}) error {
 	return nil
 }
 
-func resourceDMERecordImport(d *schema.ResourceData, meta interface{}) ([]*ResourceData, error) {
+func resourceDMERecordImport(d *schema.ResourceData, meta interface{}) ([]*schema.ResourceData, error) {
 	input_id := d.Id()
 
 	parts := strings.SplitN(input_id, "/", 2)
@@ -177,7 +177,7 @@ func resourceDMERecordImport(d *schema.ResourceData, meta interface{}) ([]*Resou
 		return nil, fmt.Errorf("Error parsing id, unable to import: %s. Must be in format DOMAIN_ID/RECORD_ID.", input_id)
 	}
 
-	return []*ResourceData{d}, nil
+	return []*schema.ResourceData{d}, nil
 }
 
 func getAll(d *schema.ResourceData, cr map[string]interface{}) error {
