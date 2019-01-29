@@ -7,7 +7,7 @@ import (
 
 	"github.com/hashicorp/terraform/helper/resource"
 	"github.com/hashicorp/terraform/terraform"
-	"github.com/soniah/dnsmadeeasy"
+	"github.com/Disciple-Media/dnsmadeeasy"
 )
 
 var _ = fmt.Sprintf("dummy") // dummy
