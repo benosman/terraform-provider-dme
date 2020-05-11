@@ -256,19 +256,19 @@ func TestAccDMERecordNS(t *testing.T) {
 			resource.TestStep{
 				Config: fmt.Sprintf(testDMERecordConfigNS, domainid),
 				Check: resource.ComposeTestCheckFunc(
-					testAccCheckDMERecordExists("dme_record.test", &record),
+					testAccCheckDMERecordExists("dme_record.test_ns", &record),
 					resource.TestCheckResourceAttr(
-						"dme_record.test", "domainid", domainid),
+						"dme_record.test_ns", "domainid", domainid),
 					resource.TestCheckResourceAttr(
-						"dme_record.test", "name", "testns"),
+						"dme_record.test_ns", "name", "testns"),
 					resource.TestCheckResourceAttr(
-						"dme_record.test", "type", "NS"),
+						"dme_record.test_ns", "type", "NS"),
 					resource.TestCheckResourceAttr(
-						"dme_record.test", "value", "foo"),
+						"dme_record.test_ns", "value", "testa"),
 					resource.TestCheckResourceAttr(
-						"dme_record.test", "ttl", "2000"),
+						"dme_record.test_ns", "ttl", "2000"),
 					resource.TestCheckResourceAttr(
-						"dme_record.test", "gtdLocation", "DEFAULT"),
+						"dme_record.test_ns", "gtdLocation", "DEFAULT"),
 				),
 			},
 		},
@@ -499,12 +499,12 @@ resource "dme_record" "test" {
   gtdLocation = "DEFAULT"
 }`
 
-const testDMERecordConfigNS = `
-resource "dme_record" "test" {
-  domainid = "%s"
+const testDMERecordConfigNS = testDMERecordConfigA + `
+resource "dme_record" "test_ns" {
+  domainid = "%[1]s"
   name = "testns"
   type = "NS"
-  value = "foo"
+  value = "${dme_record.test.name}"
   ttl = 2000
   gtdLocation = "DEFAULT"
 }`
