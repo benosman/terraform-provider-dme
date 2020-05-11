@@ -171,7 +171,7 @@ func TestAccDMERecordTXT(t *testing.T) {
 					resource.TestCheckResourceAttr(
 						"dme_record.test", "type", "TXT"),
 					resource.TestCheckResourceAttr(
-						"dme_record.test", "value", "\"foo\""),
+						"dme_record.test", "value", "foo"),
 					resource.TestCheckResourceAttr(
 						"dme_record.test", "ttl", "2000"),
 					resource.TestCheckResourceAttr(
@@ -202,7 +202,7 @@ func TestAccDMERecordSPF(t *testing.T) {
 					resource.TestCheckResourceAttr(
 						"dme_record.test", "type", "SPF"),
 					resource.TestCheckResourceAttr(
-						"dme_record.test", "value", "\"foo\""),
+						"dme_record.test", "value", "foo"),
 					resource.TestCheckResourceAttr(
 						"dme_record.test", "ttl", "2000"),
 					resource.TestCheckResourceAttr(
