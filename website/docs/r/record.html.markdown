@@ -20,7 +20,7 @@ resource "dme_record" "www" {
   type        = "A"
   value       = "192.168.1.1"
   ttl         = 3600
-  gtdLocation = "DEFAULT"
+  gtd_location = "DEFAULT"
 }
 ```
 
@@ -34,7 +34,7 @@ The following arguments are supported:
 * the record `value` - (Required) The value of the record; its usage
   will depend on the `type` (see below)
 * `ttl` - (Integer, Optional) The TTL of the record 
-* `gtdLocation` - (String, Optional) The GTD Location of the record on Global Traffic Director enabled
+* `gtd_location` - (String, Optional) The GTD Location of the record on Global Traffic Director enabled
   domains; Unless GTD is enabled this should either be omitted or set to
   "DEFAULT"
 
@@ -63,15 +63,15 @@ information.
 #### MX Record
 
 * `value` is the server
-* `mxLevel` (Integer, Required) is the MX level
+* `mx_level` (Integer, Required) is the MX level
 
 ####  HTTPRED Record
 
 * `value` is the URL
-* `hardLink` (Boolean, Optional) If true, any request that is
+* `hard_link` (Boolean, Optional) If true, any request that is
   made for this record will have the path removed after the
   fully qualified domain name portion of the requested URL
-* `redirectType` (Required) One of 'Hidden Frame Masked',
+* `redirect_type` (Required) One of 'Hidden Frame Masked',
   'Standard 301', or 'Standard 302'
 * `title` (Optional) If set, the hidden iframe that is
   used in conjunction with the Hidden Frame Masked Redirect
@@ -120,7 +120,7 @@ The following attributes are exported:
 * `value` - The value of the record
   `type` (see below)
 * `ttl` - The TTL of the record
-* `gtdLocation` - The GTD Location of the record on GTD enabled domains
+* `gtd_location` - The GTD Location of the record on GTD enabled domains
 
 Additional fields may also be exported by some record types -
 see DNS Record Types.
@@ -145,7 +145,7 @@ resource "dme_record" "testa" {
   type        = "A"
   value       = "1.1.1.1"
   ttl         = 1000
-  gtdLocation = "DEFAULT"
+  gtd_location = "DEFAULT"
 }
 
 # CNAME record
@@ -172,7 +172,7 @@ resource "dme_record" "testmx" {
   name     = "testmx"
   type     = "MX"
   value    = "foo"
-  mxLevel  = 10
+  mx_level  = 10
   ttl      = 1000
 }
 
@@ -182,8 +182,8 @@ resource "dme_record" "testhttpred" {
   name         = "testhttpred"
   type         = "HTTPRED"
   value        = "https://github.com/soniah/terraform-provider-dme"
-  hardLink     = true
-  redirectType = "Hidden Frame Masked"
+  hard_link     = true
+  redirect_type = "Hidden Frame Masked"
   title        = "An Example"
   keywords     = "terraform example"
   description  = "This is a description"
