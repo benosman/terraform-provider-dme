@@ -247,7 +247,7 @@ func setAll(d *schema.ResourceData, rec *dnsmadeeasy.Record) error {
 	}
 
 	switch rec.Type {
-	case "A", "CNAME", "ANAME", "TXT", "SPF", "NS", "PTR":
+	case "A", "CNAME", "ANAME", "NS", "PTR":
 		// all done
 	case "AAAA":
 		// overwrite value set above - DME ipv6 is lower case
@@ -258,6 +258,10 @@ func setAll(d *schema.ResourceData, rec *dnsmadeeasy.Record) error {
 		d.Set("priority", rec.Priority)
 		d.Set("weight", rec.Weight)
 		d.Set("port", rec.Port)
+	case "SPF", "TXT":
+		// quotes are stripped - remove them so Terraform
+		// doesn't want to update it every time
+		d.Set("value", strings.Trim(rec.Value, "\""))
 	case "HTTPRED":
 		d.Set("hardLink", rec.HardLink)
 		d.Set("redirectType", rec.RedirectType)
