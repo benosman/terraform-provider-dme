@@ -2,9 +2,9 @@
 
 [![Build
 Status](https://travis-ci.org/soniah/dnsmadeeasy.svg?branch=master)](https://travis-ci.org/soniah/dnsmadeeasy)
-[![Coverage](http://gocover.io/_badge/github.com/soniah/dnsmadeeasy)](http://gocover.io/github.com/soniah/dnsmadeeasy)
-[![GoDoc](https://godoc.org/github.com/soniah/dnsmadeeasy?status.png)](http://godoc.org/github.com/soniah/dnsmadeeasy)
-https://github.com/soniah/dnsmadeeasy v1.1
+[![Coverage](http://gocover.io/_badge/github.com/Disciple-Media/dnsmadeeasy)](http://gocover.io/github.com/Disciple-Media/dnsmadeeasy)
+[![GoDoc](https://godoc.org/github.com/Disciple-Media/dnsmadeeasy?status.png)](http://godoc.org/github.com/Disciple-Media/dnsmadeeasy)
+https://github.com/Disciple-Media/dnsmadeeasy v1.1
 
 This package provides the `dnsmadeeasy` package which offers an
 interface to the [DNSMadeEasy](http://www.dnsmadeeasy.com/) API.
@@ -20,7 +20,7 @@ Sonia Hamilton, sonia@snowfrog.net, http://blog.snowfrog.net.
 
 ## Documentation
 
-The full documentation is available on [Godoc](http://godoc.org/github.com/soniah/dnsmadeeasy)
+The full documentation is available on [Godoc](http://godoc.org/github.com/Disciple-Media/dnsmadeeasy)
 
 ## Related Projects
 
