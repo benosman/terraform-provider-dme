@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/hashicorp/terraform/plugin"
-	"github.com/terraform-providers/terraform-provider-dme/dme"
+	"github.com/Disciple-Media/terraform-provider-dme/dme"
 )
 
 func main() {
