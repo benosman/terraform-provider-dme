@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"github.com/hashicorp/go-cleanhttp"
-	"github.com/soniah/dnsmadeeasy"
+	"github.com/Disciple-Media/dnsmadeeasy"
 )
 
 // Config contains DNSMadeEasy provider settings

@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/hashicorp/terraform/helper/schema"
-	"github.com/soniah/dnsmadeeasy"
+	"github.com/Disciple-Media/dnsmadeeasy"
 )
 
 func resourceDMERecord() *schema.Resource {
