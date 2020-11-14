@@ -1,4 +1,4 @@
-module github.com/Disciple-Media/terraform-provider-dme
+module github.com/benosman/terraform-provider-dme
 
 go 1.14
 
